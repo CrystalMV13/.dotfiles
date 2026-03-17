@@ -1,0 +1,290 @@
+{
+  "workbench.iconTheme": "flow-dark",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "workbench.editor.defaultBinaryEditor": "default",
+  "telemetry.telemetryLevel": "off",
+  "editor.wordWrap": "on",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "--shell-escape",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdfLaTeX",
+      "tools": ["pdflatex"]
+    },
+    {
+      "name": "latexmk 🔃",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+      "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+    }
+  ],
+  "editor.rulers": [80, 100],
+  "markdown.preview.breaks": true,
+  "plantuml.exportSubFolder": false,
+  "editor.minimap.showSlider": "always",
+  "git.enableSmartCommit": true,
+  "explorer.compactFolders": false,
+  "git.autofetch": true,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontLigatures": true,
+  "csv-preview.capitalizeHeaders": false,
+  "csv-preview.resizeColumns": "first",
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "code-runner.showExecutionMessage": false,
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "clear ; cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "zig": "zig run",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "py",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runghc",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "sml": "cd $dir && sml $fileName",
+    "mojo": "mojo run"
+  },
+  "code-runner.runInTerminal": true,
+  "debug.terminal.clearBeforeReusing": true,
+  "git.confirmSync": false,
+  "AREPL.telemetry": false,
+  "code-runner.enableAppInsights": false,
+  "terminal.integrated.rendererType": "dom",
+  "scm.showChangesSummary": false,
+  "window.customTitleBarVisibility": "auto",
+  "window.titleBarStyle": "custom",
+  "interactiveWindow.executeWithShiftEnter": true,
+  "jupyter.askForKernelRestart": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "onFocusChange",
+  "code-runner.saveFileBeforeRun": true,
+  "diffEditor.maxComputationTime": 0,
+  "autoDocstring.startOnNewLine": true,
+  "python.analysis.autoFormatStrings": true,
+  "notebook.formatOnSave.enabled": true,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll": "explicit"
+    },
+    "editor.tabSize": 4
+  },
+  "isort.args": ["--profile", "black"],
+  "pylint.lintOnChange": true,
+  "python.experiments.enabled": false,
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "explorer.confirmDelete": false,
+  "python.analysis.completeFunctionParens": true,
+  "pythonIndent.trimLinesWithOnlyWhitespace": true,
+  "pythonIndent.useTabOnHangingIndent": true,
+  "editor.selectionClipboard": false,
+  "pylint.args": ["-j 0"],
+  "workbench.activityBar.location": "top",
+  "sqltools.results.reuseTabs": "connection",
+  "ruff.lineLength": 100,
+  "git.openRepositoryInParentFolders": "always",
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "latex-workshop.latex.clean.fileTypes": [
+    "%DOCFILE%.bbl",
+    "%DOCFILE%.blg",
+    "%DOCFILE%.idx",
+    "%DOCFILE%.ind",
+    "%DOCFILE%.lof",
+    "%DOCFILE%.lot",
+    "%DOCFILE%.out",
+    "%DOCFILE%.toc",
+    "%DOCFILE%.acn",
+    "%DOCFILE%.acr",
+    "%DOCFILE%.alg",
+    "%DOCFILE%.glg",
+    "%DOCFILE%.glo",
+    "%DOCFILE%.gls",
+    "%DOCFILE%.fls",
+    "%DOCFILE%.log",
+    "%DOCFILE%.fdb_latexmk",
+    "%DOCFILE%.snm",
+    "%DOCFILE%.synctex(busy)",
+    "%DOCFILE%.synctex.gz(busy)",
+    "%DOCFILE%.nav",
+    "%DOCFILE%.vrb",
+    "%DOCFILE%.synctex.gz"
+  ],
+  "latex-workshop.latex.clean.method": "glob",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.view.pdf.color.dark.backgroundColor": "",
+  "latex-workshop.view.pdf.invert": 0.95,
+  "latex-workshop.view.pdf.invertMode.brightness": 1.5,
+  "latex-workshop.view.pdf.invertMode.grayscale": 0,
+  "latex-workshop.view.pdf.color.light.backgroundColor": "",
+  "chat.commandCenter.enabled": false,
+  "files.exclude": {
+    "**/.directory": true
+  },
+  "latex-workshop.view.outline.sections": [
+    "problem",
+    "part",
+    "chapter",
+    "section",
+    "subsection",
+    "subsubsection"
+  ],
+  "tinymist.exportPdf": "onType",
+  "tinymist.preview.invertColors": "always",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "workbench.colorTheme": "Neox Dark",
+  "liveServer.settings.https": {
+    "enable": true,
+    "cert": "/home/crystal/Documents/Certificates/wendelstein.crt",
+    "key": "/home/crystal/Documents/Certificates/wendelstein.key",
+    "passphrase": "wendel"
+  },
+  "scm.defaultViewMode": "tree",
+  "editor.tabSize": 2,
+  "liveServer.settings.port": 5500,
+  "python.analysis.packageIndexDepths": 3,
+  "python.analysis.indexing": true,
+  "python.analysis.autoImportCompletions": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "liveServer.settings.host": "0.0.0.0",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "owtc.explorerContextMenu": true,
+  "workbench.editorAssociations": {
+    "*.pdf": "latex-workshop-pdf-hook"
+  },
+  "markdownlint.config": {
+    "MD012": false,
+    "MD022": false,
+    "MD024": false,
+    "MD031": false,
+    "MD032": false,
+    "MD041": false,
+    "MD047": false
+  },
+  "typst-math.renderingMode": "nothing",
+  "indentRainbow.excludedLanguages": ["plaintext", "racket"],
+  "notebook.lineNumbers": "on",
+  "editor.largeFileOptimizations": false,
+  "[ocaml]": {
+    "editor.defaultFormatter": "ocamllabs.ocaml-platform"
+  },
+  "ocaml-indentation.ocp-indent-path": "/home/crystal/.opam/default/bin",
+  "remote.autoForwardPortsSource": "hybrid",
+  "svifpd.viewerUi.invertMouseWheelZoom": true,
+  "basedpyright.analysis.typeCheckingMode": "basic",
+  "autoDocstring.docstringFormat": "numpy",
+}

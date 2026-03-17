@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $1 in
+    pre)  systemctl disable rclone@crystalmv13; systemctl disable rclone@hauntedbunnies; systemctl disable rclone@cm123 ;;
+    post) systemctl enable rclone@crystalmv13; systemctl enable rclone@hauntedbunnies; systemctl enable rclone@cm123 ;;
+esac

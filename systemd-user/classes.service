@@ -1,0 +1,29 @@
+[Unit]
+Description=Syncing local class directories with Google Drive using rclone bisync
+Documentation=man:rclone(1)
+After=network-online.target
+Wants=network-online.target 
+StartLimitIntervalSec=300
+StartLimitBurst=1
+
+[Service]
+Type=oneshot
+ExecStart= \
+/usr/bin/rclone bisync cm123:Classes/"Sem. 6 - Spring 2026" %h/Classes \
+    -MvP \
+    --create-empty-src-dirs \
+    --compare size,modtime,checksum \
+    --conflict-resolve newer \
+    --conflict-loser delete \
+    --conflict-suffix sync-conflict-{DateOnly}- \
+    --suffix-keep-extension \
+    --resilient \
+    --recover \
+    --no-slow-hash \
+    --drive-skip-gdocs \
+    --drive-skip-shortcuts \
+    --fix-case \
+    --max-lock 5m
+	
+[Install]
+WantedBy=default.target

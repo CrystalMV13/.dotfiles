@@ -1,0 +1,11 @@
+[Unit]
+Description=rclone: unmount FUSE for remote %i
+Documentation=man:rclone(1)
+Before=systemd-suspend.service
+
+[Service]
+Type=notify
+ExecStart=/bin/fusermount -u -z %h/"Google Drive"/%i
+
+[Install]
+WantedBy=default.target

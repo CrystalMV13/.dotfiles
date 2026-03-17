@@ -1,0 +1,73 @@
+/* Make Linux titlebar buttons like Windows' */
+.disable-titlebar#browser.linux .window-buttongroup {
+  height: 47px;
+}
+
+.maximized#browser.linux .window-buttongroup,
+.fullscreen#browser.linux .window-buttongroup {
+  right: 0;
+}
+
+#browser.linux .window-buttongroup {
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  line-height: initial;
+}
+
+.win#browser .window-buttongroup,
+.linux:not(.alt)#browser .window-buttongroup {
+  transform-origin: top right;
+}
+
+#browser .window-buttongroup {
+  display: flex;
+  z-index: 1;
+  scale: calc(1 / var(--uiZoomLevel));
+  fill: currentColor;
+}
+
+
+/* Minimize and maximize buttons */
+.disable-titlebar#browser.linux .window-buttongroup button {
+  height: inherit;
+}
+
+#browser.linux .window-buttongroup button {
+  width: 47px;
+  height: 25px;
+  margin-left: 0px;
+  transition: background 0.3s, fill 0.3s;
+  border-radius: 0;
+  fill: currentColor;
+  background-color: transparent;
+}
+
+#browser .window-buttongroup button {
+  width: 25px;
+  height: 20px;
+  border: 0;
+  background-color: transparent;
+  margin-right: 0;
+}
+
+
+/* Close buttons */
+#browser.linux .window-buttongroup button.window-close {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+#browser.linux .window-buttongroup button.window-close:hover {
+  fill: #fff;
+  background-color: #c42c1d;
+}
+
+
+
+/* Makes space on rest of toolbar for titlebar buttons */
+#browser.linux:not(.native).address-top .toolbar:has(.window-buttongroup.on-mainbar) {
+  padding-right: calc((47px * 3) / var(--uiZoomLevel));
+}

@@ -1,0 +1,209 @@
+/*#tabs-tabbar-container:is(.left, .right) {position: fixed; height: -webkit-fill-available !important; box-shadow: #0008 0 0 2px, rgb(0 0 0 / 25%) 0px 3px 6px; clip-path:inset(0 -50px 0 -50px); transition: .15s ease-out .1s !important;}
+#tabs-tabbar-container.left {left:0; z-index:1;}
+#panels-container.left ~ div > #tabs-tabbar-container.left {left: unset;}
+#tabs-tabbar-container.right {right:0;}
+#panels-container.right ~ #tabs-tabbar-container.right {right:35px;}
+
+#tabs-tabbar-container.left:not(:focus-within):not(:hover) {will-change: clip-path; clip-path:inset(0% calc(100% - 28px) 0% 0%); transition: .15s ease-out .1s !important;}*/
+	/* note: changed 30px to 28px */
+/*#tabs-tabbar-container.right:not(:focus-within):not(:hover) {will-change: transform; transform: translateX(calc(100% - 30px)); transition: .15s ease-out .1s !important;}
+
+#tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) > div.overflow .tab-strip {animation: ofh 0s .5s forwards !important;}
+@keyframes ofh {to {overflow-y: hidden;}}*/
+
+/* newtab position */
+/*#tabs-tabbar-container:is(.left, .right) .newtab {left: 0 !important; width: 100%; transition: width .1s .1s !important;}
+#tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) .newtab {width: 30px; transition: width 0s .5s !important;}*/
+
+/* reserved inner space for minimized tabbar by only push webview-container inward */
+/* #browser:not(.fullscreen).tabs-left #webview-container {margin-left:28px;} */
+	/* margin-left must be same value as noted in line 8 */
+/* #browser:not(.fullscreen).tabs-right #webview-container {margin-right:30px;} */
+
+/* Option 1: minimize into parent column */
+/* #tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) {flex-direction: row;} */
+/* Option 2: minimize into child column */
+/* //#tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) {flex-direction: row-reverse;} */
+
+/* canceled left tabbar's parent's DIV width */
+/* #main > .inner > div:has(#tabs-tabbar-container.left) {max-width: 0px;} */
+
+/* make space for static statusbar at bottom */
+/* #browser:has(footer > .toolbar-statusbar) #tabs-tabbar-container {margin-bottom: 24px;} */
+
+
+
+/* Automate 2 level vertical tabbar columns */
+/* .substrip-tabs-on #tabs-tabbar-container:is(.left, .right) > div {z-index: 1; transition: background-color .15s, flex-basis .12s ease-out .05s !important;} */
+/* active main column */
+/* .substrip-tabs-on #tabs-tabbar-container:is(.left, .right) > #tabs-container:is(:focus-within, :hover):not(:has(.SlideBar--FullHeight:active)) + #tabs-subcontainer {flex-basis: 30px !important; z-index: 0;}  */
+/* active sub column */
+/* .substrip-tabs-on #tabs-tabbar-container:is(.left, .right) > #tabs-subcontainer:is(:focus-within, :hover) {flex-basis: calc(100% - 64px) !important; z-index: 3;}  */
+/* active sub column with small width tabbar */
+/* .substrip-tabs-on #tabs-tabbar-container:is(.left, .right):is(:focus-within, :hover):is([style^='width: 6'], [style^='width: 7'], [style^='width: 8'], [style^='width: 9']) > #tabs-subcontainer:is(:focus-within, :hover) {flex-basis: calc(100% - 30px) !important; z-index: 3;}  */
+
+/* inactive tabbar columns' ratio during small width (minimized sub column to favicon) */
+/* .substrip-tabs-on #tabs-tabbar-container:is(.left, .right):not(:focus-within, :hover):is([style^='width: 6'], [style^='width: 7'], [style^='width: 8'], [style^='width: 9']) > #tabs-subcontainer:not(:focus-within, :hover) {flex-basis: 30px !important;} */
+
+/* fix small tab hover effect for title, stack counter, & close button */
+/*#tabs-container .tab.tab-small.tab-mini .tab-header {justify-content: unset; padding-left: 5px;}
+#tabs-container .tab.tab-small.tab-mini .tab-header .title {display: flex;}
+#browser:not(.alt-tabs).substrip-tabs-on #tabs-tabbar-container:is(.left, .right) .tab-position .tab:hover.tab:not(.button-off, .force-hover, .tab-small) .stack-counter, 
+.substrip-tabs-on #tabs-tabbar-container:is(.left, .right) .tab-position .tab:not(.tab-mini) .stack-counter {display: block; margin-left: -6px;}
+.substrip-tabs-on #tabs-tabbar-container:is(.left, .right) .tab-position :is(.tab:hover.tab-small, .tab.force-hover.tab-small) .close {display: flex; margin-left: -3px;}*/
+
+/* autohide inactive columns' scrollbar */
+/* #tabs-tabbar-container > div.overflow:not(:focus-within):not(:hover) .tab-strip {overflow-y: hidden;} */
+
+
+
+
+
+/* Expanding Left Tabs */
+
+/* Animate the tabs, set initial width. */
+/* .tab-position {
+	visibility: visible;
+	width: 30px !important;
+} */
+
+#tabs-tabbar-container.left {
+transition: all 250ms ease !important;
+width: 36px !important;
+--scrollbarWidth: 0;
+}
+
+#tabs-tabbar-container.left:hover {
+width: 250px !important;
+}
+
+.tabbar-wrapper {
+	position: absolute !important;
+	z-index: 200 !important;
+	height: 100% !important;
+	transition: all 250ms ease !important;
+	width: 30px;
+}
+
+.tabbar-wrapper:hover {
+	width: 250px !important;
+}
+
+#webview-container {
+margin-left: 30px;
+}
+
+@media all and (display-mode: fullscreen) {
+	#webview-container {
+	margin-left: 0 !important;
+	}
+}
+
+/* Shunt the status info (text on hover) over to accomodate tabs */
+#webview-container ~ .StatusInfo {
+left: 36px !important;
+}
+
+.newtab {
+	opacity: 0;
+}
+
+#tabs-tabbar-container.left:hover .newtab {
+opacity: 1 !important;
+transition: opacity 200ms ease 250ms;
+}
+
+::webkit-scrollbar {
+	visibility: hidden;
+	width: 0;
+}
+
+.tab-strip {
+	margin-right: 3px !important;
+}
+
+
+
+
+
+
+/* Remove white outline on active favicon */
+.tab.active .tab-header .favicon:not(.svg) {
+filter: none !important;
+}
+
+
+
+
+
+/* Make Linux titlebar buttons like Windows' */
+.disable-titlebar#browser.linux .window-buttongroup {
+	height: 47px;
+}
+
+.maximized#browser.linux .window-buttongroup, .fullscreen#browser.linux .window-buttongroup {
+	right: 0;
+}
+
+#browser.linux .window-buttongroup {
+	position: absolute;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+	line-height: initial;
+}
+
+.win#browser .window-buttongroup, .linux:not(.alt)#browser .window-buttongroup {
+	transform-origin: top right;
+}
+
+#browser .window-buttongroup {
+	display: flex;
+	z-index: 1;
+	scale: calc(1 / var(--uiZoomLevel));
+	fill: currentColor;
+}
+
+
+/* Minimize and maximize buttons */
+.disable-titlebar#browser.linux .window-buttongroup button {
+	height: inherit;
+}
+
+#browser.linux .window-buttongroup button {
+	width: 47px;
+	height: 25px;
+	margin-left: 0px;
+	transition: background 0.3s, fill 0.3s;
+	border-radius: 0;
+	fill: currentColor;
+	background-color: transparent;
+}
+
+#browser .window-buttongroup button {
+	width: 25px;
+	height: 20px;
+	border: 0;
+	background-color: transparent;
+	margin-right: 0;
+}
+
+
+/* Close buttons */
+#browser.linux .window-buttongroup button.window-close {
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+}
+
+#browser.linux .window-buttongroup button.window-close:hover {
+	fill: #fff;
+	background-color: #c42c1d;
+}
+
+
+
+/* Makes space on rest of toolbar for titlebar buttons */
+#browser.linux:not(.native).address-top .toolbar:has(.window-buttongroup.on-mainbar) {
+	padding-right: calc((47px * 3) / var(--uiZoomLevel));
+}

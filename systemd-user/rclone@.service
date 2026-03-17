@@ -1,0 +1,28 @@
+[Unit]
+Description=rclone: Remote FUSE filesystem for cloud storage config %i
+Documentation=man:rclone(1)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStartPre=-/usr/bin/mkdir -p %h/"Google Drive"/%i
+ExecStart= \
+  /usr/bin/rclone mount \
+    --config=%h/.config/rclone/rclone.conf \
+    --allow-non-empty \
+    --vfs-cache-mode full \
+    --vfs-cache-max-size 100M \
+    --dir-cache-time 72h \
+    --vfs-read-chunk-size-limit 1000M \
+    --vfs-read-chunk-size-limit off \
+    --log-level DEBUG \
+    --log-file /tmp/rclone-%i.log \
+    --umask 022 \
+    --drive-export-formats=desktop \
+    --transfers 12 \
+    %i: %h/"Google Drive"/%i
+ExecStop=/bin/fusermount -u -z %h/"Google Drive"/%i
+
+[Install]
+WantedBy=default.target

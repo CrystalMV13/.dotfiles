@@ -1,0 +1,44 @@
+global_vars:
+  - name: testtext1
+    type: echo
+    params:
+      echo: |
+        this is text i can more easily deal with yknow
+  - name: testtext2
+    type: echo
+    params:
+      echo: |
+        some more stuff yeah hello
+
+matches:
+  - trigger: :test1
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: espanso match exec -t :image ; echo "{{ testtext1 }} :image"
+
+  - trigger: :test2
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: sleep 5s; echo "{{ testtext2 }}"
+
+  - trigger: :image
+    image_path: "$CONFIG/images/vpnaccess.png"
+      
+  - trigger: :fullthing
+    replace: "{{test1}} {{test2}}"
+    vars:
+      - name: test1
+        type: match
+        params:
+          trigger: :test1
+      - name: test2
+        type: match
+        params:
+          trigger: :test2
+        

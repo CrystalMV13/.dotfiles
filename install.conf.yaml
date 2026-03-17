@@ -1,0 +1,29 @@
+- defaults:
+    link:
+      relink: true
+      create: true # Create parent directories as needed in destination
+
+- clean: ['~']
+
+- link:
+    ~/.config/espanso: espanso
+    ~/.config/fish: fish
+    ~/.config/git: git
+    ~/.config/texmf/tex/latex/local: latex-styles
+    ~/.config/pip: pip
+    ~/.config/pipewire: pipewire
+    ~/.bashrc: bash/rc.bash
+    ~/.blerc: bash/blerc.bash
+    ~/.config/starship.toml: starship/starship.toml
+    ~/.config/systemd/user: systemd-user
+    ~/.local/share/typst/packages/templates: typst-templates
+    ~/.config/VSCodium/User/keybindings.json: vscodium/keybindings.json
+    ~/.config/VSCodium/User/settings.json: vscodium/settings.json
+    ~/.config/VSCodium/User/snippets: vscodium/snippets
+    ~/.config/VSCodium/User/globalStorage/draivin.hsnips/hsnips: vscodium/hypersnips
+    ~/.config/wireplumber: wireplumber
+    ~/.config/yt-dlp.conf: yt-dlp/yt-dlp.conf
+    /usr/lib/systemd/system-sleep/rclone: scripts/rclone-sleep
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

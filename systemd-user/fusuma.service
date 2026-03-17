@@ -1,0 +1,10 @@
+[Unit]
+Description=start fusuma
+Documentation=man:fusuma
+
+[Service]
+Type=notify
+ExecStart=fusuma
+
+[Install]
+WantedBy=default.target

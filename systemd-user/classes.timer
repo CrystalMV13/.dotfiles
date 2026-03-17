@@ -1,0 +1,10 @@
+[Unit]  
+Description=Classes sync timer (triggers every 10 minutes)
+  
+[Timer]  
+OnCalendar=*:0/10
+Persistent=true  
+Unit=classes.service  
+  
+[Install]  
+WantedBy=default.target

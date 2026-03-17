@@ -1,0 +1,7 @@
+[Path]
+Unit=classes.service
+PathChanged=%h/sync
+# trigger on changes to a file not just create/delete
+
+[Install]
+WantedBy=default.target

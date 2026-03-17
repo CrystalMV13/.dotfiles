@@ -1,0 +1,413 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+global_vars:
+  - name: hdsig
+    type: echo
+    params:
+      echo: |
+        Best,
+
+        Wellesley Computing Help Desk  
+        Wellesley College  
+        Library & Technology Services  
+        helpdesk@wellesley.edu  
+        Faculty & Staff: 781.283.3333 (x3333)  
+        Students & Alumnae: 781.283.7777 (x7777)  
+
+        *** Many people want your password so they can steal your information. If an email asks you to send your password or directs you to a webpage, be suspicious, DO NOT provide your password to anyone for any reason. Secondly, examine the web page link in such emails to ensure that it is a legitimate URL. LTS will never ask for your passwords -- when in doubt, contact the LTS Computing Help Desk.
+
+matches:
+  #
+  # BASIC SUPPORT
+  #
+  - trigger: ":hdsig"
+    markdown: "{{hdsig}}"
+    
+    
+  - trigger: ":hd"
+    markdown: |
+        Hello,
+
+        Thank you for contacting the Wellesley Computing Help Desk. 
+
+        {{hdsig}}
+
+  #
+  # FROM https://docs.google.com/document/d/1-TmVtnCSLBKtrvPeD_4FjHSnuZcRpwZLl7uAaz4zM8g/edit?tab=t.0
+  #
+  - trigger: ":moreinfo"
+    markdown: |
+        Hello,
+
+        Thank you for contacting the Wellesley Computing Help Desk. Could you please provide more information?
+
+        Approximately when did the issue start?
+        Is this on your Wellesley-issued staff computer, or a personal computer?
+        Does the issue persist after restarting your device or the system, and trying again?
+        Do others in your group experience the same issue?
+
+        Any further details you can provide will be greatly appreciated. We look forward to hearing from you.
+
+        {{hdsig}}
+
+
+  - trigger: ":alumpasspre"
+    markdown: |
+        Hi {{form.name}},
+
+        Thank you for contacting the Wellesley Computing Help Desk about your Wellesley College Login information.
+
+        Please try the [self-service Alumnae Password Reset website](https://webapps.wellesley.edu/alum_pwd_reset) to reset your Wellesley Login password: [https://webapps.wellesley.edu/alum_pwd_reset](https://webapps.wellesley.edu/alum_pwd_reset)
+
+        If your information doesn't match our self-service system, please call us at 781.283.7777. We will verify your information and reset your password.
+
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Alum's name: [[name]]
+            
+            
+  - trigger: ":alumpasspost"
+    markdown: |
+        Hi {{form.name}},
+
+        Thank you for reaching out! We have verified your information and reset the password to your Wellesley account to a temporary one that will expire in 10 days. Please follow the directions below to change it to a secure password.
+
+        1. Visit [https://reset.wellesley.edu](https://reset.wellesley.edu)
+        2. Enter your username: {{form.username}}
+        3. Enter your temporary 12-digit password: {{form.password}} The last four digits of your College ID followed by your date of birth in MMDDYYYY format.
+        4. Click Login.
+        5. Enter the same temporary password in the "current password" field.
+        6. Type a new password in both the "new password" and "confirm new password" fields, and click Reset Password.
+
+        Setup DUO Mobile:
+        - Log in to the Portal
+        - Visit [https://intranet.wellesley.edu](https://intranet.wellesley.edu)
+        - Enter your Wellesley username followed by @wellesley.edu (e.g., mdisney@wellesley.edu). 
+        - Click Next and enter your new password.
+        - Start Duo Setup
+
+        Select the Duo Mobile option: Click here for a short video tutorial.
+
+        You may now visit the Alumnae Portal at: [https://alum.wellesley.edu](https://alum.wellesley.edu)
+        
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Alum's name: [[name]]
+            Alum's username: [[username]]
+            Temporary password: [[password]]
+
+
+  - trigger: ":duopre"
+    markdown: |
+        Hi,
+
+        Thank you for contacting the Wellesley College Help Desk. Could you please confirm the following details?
+        - Class year
+        - Dorm you lived your senior year
+        
+        We will verify your information and enable your DUO 2FA account. We will also send instructions on how to set it up.
+
+        {{hdsig}}
+    
+    
+  - trigger: ":duopost"
+    markdown: |
+        Hi {{form.name}},
+
+        Thank you for contacting the Wellesley College Help Desk. We have unlocked your DUO Account. Please try to login now and it should work. You can follow the instructions below the finish the DUO process.
+        
+        **Please be sure to setup DUO within 24 hours so your account doesn't get locked again.**
+
+        **Instructions to complete the Duo Set up**
+
+        - **Log in to the Portal**
+        - Visit https://portal.wellesley.edu/.
+        - Enter your Wellesley username followed by @wellesley.edu (e.g., **{{form.username}}@wellesley.edu**). Click Next and enter your password.
+        - **Start Duo Setup**
+        - After logging in, you’ll see a message welcoming you to Duo.
+        - Follow the on-screen instructions to get started.
+        - **Choose Your Device**
+        - **If you want to use the Duo Mobile app** (on a smartphone or tablet):
+        
+        Select the **Duo Mobile** option [RECOMMENDED]. [[Click here for a short video tutorial.]](https://drive.google.com/file/d/1e310axXTaRLWZ-F7mhT71I7dUVerjZyY/view?usp=drive_link)
+        - **If you prefer to receive a text or phone call using a cellphone (flip phone) or a landline:**
+        
+        Select the phone number option. [[Click here for a short video tutorial.]](https://drive.google.com/file/d/1HEsY3crFY8CeD8ryIw9yQbmhl_IxmMQL/view?usp=drive_link)
+        - **Complete the Setup**
+        - Follow the prompts step by step until you’ve successfully logged in with Duo 2FA.
+        
+        If you have questions or need help, feel free to contact the Computing Help Desk at helpdesk@wellesley.edu or call 781-283-7777. We’re here to assist you!
+
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Alum's name: [[name]]
+            Alum's username: [[username]]
+
+
+  - trigger: ":duobypass"
+    markdown: |
+        Hi,
+
+        Thank you for contacting the Wellesley College Help Desk. We recommend installing the DUO mobile application and setting it up for Wellesley College. This will enable you to login with by approving a push notification, or entering a passcode from the app, and it will eliminate the need for a bypass code.
+
+        Could you please confirm the following details?
+        - Class year
+        - Dorm you lived your senior year (if alum)
+        - Cell phone number
+        - Device type (iPhone or Android)
+        - We will verify your information and send you an activation email for the DUO mobile application.
+
+        {{hdsig}}
+
+
+  - trigger: ":passpre"
+    markdown: |
+        Hi {{form.name}},
+
+        Thank you for contacting the Wellesley Computing Help Desk. Please try to reset your password by visiting https://reset.wellesley.edu
+
+        If that does not work, we can further assist. Please note in order to reset your password we are required to verify your identity.
+
+        Please come to the Help Desk in person weekdays between 8:30am-4:30pm. You will need to present your Wellesley College ID. We are located in Clapp Library, Room 320.
+
+        If you are unable to come in person, please reply with the following information:
+
+        - Full Name:
+        - Wellesley College ID#:
+        - Cell Number:
+        - Reason for password reset:
+        - Title, Department, or Affiliation to Wellesley:
+        - Start Date or Program Name:
+        - Availability for a Zoom meeting today or tomorrow in EST between 8:30am - 4:30pm:
+
+        We look forward to hearing from you.
+        
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Student/Staff's name: [[name]]
+    
+            
+  - trigger: ":vpnaccess"
+    markdown: |
+        Hello {{form.name}},
+
+        Thank you for contacting the Wellesley Computing Help Desk. To improve our security and ensure a seamless experience, we have moved VPN services from Cisco AnyConnect to OpenVPN. This change will make our VPN compatible with Duo, our Two-Factor Authentication solution thereby providing the much needed protection.
+
+        **What This Means for You**
+        - The next time you need to connect to the campus network from offsite, simply go to [https://wellesley.openvpn.com](https://wellesley.openvpn.com), 
+        - The system will automatically detect that you do not have the new software and will guide you through the process of installing and setting up the OpenVPN client on your device. [Allow for a few minutes for the installation]
+        - Depending on your type of device, you may be asked:
+          - To enter in your username (include @wellesely.edu)
+          - To enter in  a server address or cloud ID, enter in [https://wellesley.openvpn.com](https://wellesley.openvpn.com)
+        
+        This one-time process will ensure a more secure and reliable connection for you moving forward.
+
+        Please let us know if you have any questions.
+
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Name: [[name]]
+      - name: "clipb"
+        type: "clipboard"
+
+
+  - trigger: ":office365"
+    markdown: |
+        Hi,
+
+        Thank you for contacting the Wellesley Computing Help Desk! You may already have an Office 365 account. The login will be the same as your Wellesley Account username and password. Could you please open a new window and try to login at the following link?
+
+        [https://office.com](https://office.com)
+
+        If you encounter any errors please reply with the specific message or a screenshot so we can escalate your request to our licensing team. We look forward to hearing from you.
+
+        {{hdsig}}
+
+
+  - trigger: ":phishing"
+    markdown: |
+        Hello,
+
+        Thank you for contacting the Wellesley Computing Help Desk and reporting this email. The email appears to be phishing. We are transferring it to our Phishing team for further investigation. Please delete the email if you haven't already done so.
+
+        {{hdsig}}
+
+
+  - trigger: ":touchid"
+    markdown: |
+        Hello {{form.name}},
+
+        Thank you for your email. When you set up Duo 2FA, TouchID was set up from your laptop or other device, and that will not allow you to login on any other device like a phone.
+
+        In order for you to have something that works on all devices, we have removed the TouchID method from your Duo 2FA account.
+
+        The next time you login (portal.wellesley.edu), you will be prompted to set up Duo 2FA again. This time, choose the Duo Mobile app and follow the steps to download and set up the Duo Mobile app on your mobile phone.
+
+        Please let us know if you encounter any issues.
+        
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Name: [[name]]
+
+
+  - trigger: ":duoadd"
+    markdown: |
+        Hello,
+
+        Thank you for contacting the Wellesley Computing Help Desk. In order to update your DUO 2FA account, we will need to verify some information. Please reply with the following details:
+
+        - Full Name
+        - Wellesley Email
+        - Class Year
+        - Reason to update DUO
+        - College ID number (if current student, faculty or staff)
+        - Dorm you lived your senior year (if alum)
+        - Current Phone Number
+        - NEW Phone Number
+        - Device Type (iPhone or Android)
+
+        If you have any questions please call us at 781.283.3333.
+
+        {{hdsig}}
+
+
+  #
+  # MY QUICK TEXTS
+  #
+  - trigger: ":passwordbreach"
+    markdown: |
+        Hi {{form.name}},
+
+        Many alumnae had their passwords breached recently, and so we reset their passwords to secure their accounts. Luckily, with our new policies on DUO 2FA, these hackers were not able to access their accounts. We saw a suspicious login on your account, so, to be safe, we reset your password.
+
+        We **highly recommend updating your passwords** if you use the same password across multiple accounts.
+        
+        Please call us at 781.283.7777 to verify your information and reset your password. We are open 8:30-5:30 EST Mondays through Fridays.
+        
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Alum's name: [[name]]
+            
+            
+  - trigger: ":sans"
+    markdown: |
+        Hello {{form.name}},
+
+        Thank you for contacting the Wellesley College Help Desk. Your account has been Disabled as you have not completed the SANS Training.
+
+        I have set your account to be unlocked. Please check back later, and be sure to complete the SANS cybersecurity training ASAP.
+        
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Name: [[name]]
+
+            
+  - trigger: ":alumemail"
+    markdown: |
+        Hi {{form.name}},
+
+        Thank you for contacting the Wellesley Computing Help Desk. 
+
+        Please note that {{form.username}}@wellesley.edu is only a username to login to MyWellesley. There is no email account or mailbox associated with it, which is why you are unable to access Gmail.
+
+        This is because certain alumnae mailboxes were deleted in the past if they were not in use, or due to Google storage policy changes at the college. Notices would have been sent to those impacted. 
+
+        Please let us know if you have any further questions.
+
+        Kind regards,
+
+        {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Alum's name: [[name]]
+            Alum's username: [[username]]
+    
+            
+  - trigger: ":onecard"
+    markdown: |
+        Hello,
+
+        Your new OneCard is now ready for pickup at the Computing Help Desk. We are in room Clapp 320, and our hours are 8:15am - 5:30pm. Please come in any time during these hours to pick up your card.
+
+        Please note that you'll need a **physical government-issued ID** in oder to pick up your new OneCard.
+
+        The Library systems will be updated with the new OneCard's information overnight; if you wish to check out a book today, please see the front desk. AVI will manually update their databases to match your new OneCard, likely within a day.
+
+        {{hdsig}}
+
+
+  - trigger: ":wifi"
+    markdown: |
+      Hi {{form.name}},
+
+      Thanks for contacting the Help Desk. WiFi issues are complex and require detailed information from you so we can give appropriate help to troubleshoot and resolve this issue.
+
+      Please bring your devices to the Help Desk in the Clapp Library so we can go through some initial troubleshooting steps to check your WiFi settings.
+
+      It would also be helpful if you can answer the following questions either via email or when you visit the Help Desk.
+
+      - What issue are you having with the WiFi (slow playing videos, can't load websites, WiFi connection keeps disconnecting, etc.)?
+      - Where are you having issues (only in your room, in your dorm, all over campus)?
+      - When was a date and time you last had this issue?
+      - Details of the devices that are having issues and their system versions (MacBook with Big Sur, Windows 10 PC, iPhone with iOS 15, Samsung phone with Android 10, etc.)?
+      - What is the WiFi address for each device (see [our website](https://www.wellesley.edu/lts/techsupport/mac_address) for instructions on finding it)?
+
+      {{hdsig}}
+    paragraph: true
+    vars:
+      - name: "form"
+        type: "form"
+        params:
+          layout: |
+            Student's name: [[name]]

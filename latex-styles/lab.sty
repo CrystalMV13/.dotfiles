@@ -1,0 +1,321 @@
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{framed}
+\usepackage{siunitx}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[autostyle=true]{csquotes} % Context-sensitive quotation marks
+\usepackage{cancel}
+
+\usepackage[T1]{fontenc}
+
+\usetikzlibrary{automata,positioning}
+
+
+%
+% Document metadata
+%
+\let\@author\@empty
+\let\@course\@empty
+\let\@instructor\@empty
+\let\@lab\@empty
+\let\@duedate\@empty
+
+\newcommand{\course}[1]{\def\@course{#1}}
+\newcommand{\instructor}[1]{\def\@instructor{#1}}
+\newcommand{\lab}[1]{\def\@lab{Lab #1}}
+\newcommand{\duedate}[1]{\def\@duedate{#1}}
+
+\newcommand{\documentinfo}[5]{
+    \author{#1}
+    \lab{#2}
+    \duedate{#3}
+    \course{#4}
+    \instructor{#5}
+}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+\parskip=5pt
+
+% added to stop latex from complaining
+\headheight=14.5pt
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\@course\ \textit{\@instructor} }
+\chead{\@lab}
+\rhead{\textbf{\@author}}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+\definecolor{shadecolor}{HTML}{cfcfcf}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\newcommand{\enterSubpartHeader}[2]{
+    \nobreak\extramarks{}{Problem \arabic{#1}.\Alph{#2} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1}.\Alph{#2} (continued)}{Problem \arabic{#1}.\Alph{#2} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitSubpartHeader}[2]{
+    \nobreak\extramarks{Problem \arabic{#1}.\Alph{#2} (continued)}{Problem \arabic{#1}.\Alph{#2} continued on next page\ldots}\nobreak{}
+    \stepcounter{#2}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{problemCounter}
+\setcounter{problemCounter}{1}
+\nobreak\extramarks{Problem \arabic{problemCounter}}{}\nobreak{}
+
+%
+% Answers
+%
+\newcommand{\answer}[1]{
+    \section{Answer #1}
+}
+\newcommand{\answerpart}[1]{
+    \subsection{#1)}
+}
+
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{problem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{problemCounter}{#1}
+    \fi
+    \section{Problem \arabic{problemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{problemCounter}
+}{
+    \exitProblemHeader{problemCounter}
+}
+
+\newenvironment{subpart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partCounter}{#1}
+    \fi
+    \subsection{\Alph{partCounter})}
+    \enterSubpartHeader{problemCounter}{partCounter}
+}{
+    \exitSubpartHeader{problemCounter}{partCounter}
+}
+
+%
+% Answer
+%
+% \newcommand{\answer}[1]{
+%     \begin{center}
+%         \fcolorbox{black}{shadecolor}{
+%             \begin{minipage}{5in}
+%                 \begin{center}
+%                     \textbf{#1}
+%                 \end{center}
+%             \end{minipage}
+%         }
+%     \end{center}
+
+% }
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\@course:\ \@lab}}\\
+    \normalsize\vspace{0.1in}\small{Due\ on\ \@duedate\ at 3:10pm}\\
+    \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{\today}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Order of magnitude
+\newcommand{\oom}[1]{1\text{e#1}}
+\newcommand{\oomqty}[2]{
+    \qty[parse-numbers=false]{\oom{#1}}{#2}
+}
+% \NewCommandCopy{\qtyBasic}{\qty}
+% \newcommand{\qty}[2]{
+
+% }
+
+% Set value
+\newcommand{\setval}[3][\empty]{
+    \ifx#1\empty
+        \pgfkeyssetvalue{/variablenames/#2}{#2}
+        \pgfkeyssetvalue{/variables/#2}{#3}
+    \else
+        \pgfkeyssetvalue{/variablenames/#1}{#2}
+        \pgfkeyssetvalue{/variables/#1}{#3}
+    \fi
+}
+\newcommand{\val}[1]{
+    \pgfkeysvalueof{/variables/#1}
+    % \pgfkeysifdefined{
+    %     /variables/#1
+    % }{
+    %     \val{#1}
+    % }{
+    %     \textbf{\hl{EMPTY VALUE!!!}}
+    % }
+}
+\newcommand{\var}[1]{
+    \pgfkeysvalueof{/variablenames/#1}
+}
+\newcommand{\showval}[1]{
+    \var{#1} = \val{#1}
+}
+
+%
+% Auto-resizing brackets (https://tex.stackexchange.com/a/459299)
+%
+\usepackage{ifthen}
+% https://tex.stackexchange.com/questions/45946/stack-datastructure-using-latex
+\makeatletter
+\newcommand\newstack[1]{\let#1\@empty}
+\newcommand{\addQelement}[2]{\gdef\element{#2}\pushQelement{#1}}
+\newcommand{\pushQelement}[1]{\xdef#1{\element+#1}}
+\long\def\popQ#1+#2\@nil#3{\gdef\poppedQelement{#1}\gdef#3{#2}}
+\long\def\peekQ#1+#2\@nil#3{\gdef\poppedQelement{#1}}
+\newcommand\popQelement[1]{\ifx #1\@empty  Error\else\expandafter\popQ#1\@nil#1\fi}
+\newcommand\peekQelement[1]{\ifx #1\@empty  Error\else\expandafter\peekQ#1\@nil#1\fi}
+\makeatother
+
+\makeatletter
+% for amsmath "compatibility" (not sophisticated)
+\AtBeginDocument {%
+          \def\resetMathstrut@{%
+           \setbox\z@\hbox{\the\textfont\symoperators\char40}%
+           \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}%
+}%
+\makeatother
+\newcommand*\autooS{\peekQelement{\bracketstack}\ifthenelse{\equal{\poppedQelement}{S}}{\right\originalbardelimiterS\popQelement{\bracketstack}}{\left\originalbardelimiterS\addQelement{\bracketstack}{S}}}
+\newcommand*\autoop{\left(\addQelement{\bracketstack}{p}}
+\newcommand*\autocp{\right)\popQelement{\bracketstack}}
+\newcommand*\autoob{\left[\addQelement{\bracketstack}{b}}
+\newcommand*\autocb{\right]\popQelement{\bracketstack}}
+\DeclareRobustCommand*\{{\ifmmode \left\lbrace\addQelement{\bracketstack}{c} \else \textbraceleft \fi }
+\DeclareRobustCommand*\}{\ifmmode \right\rbrace\popQelement{\bracketstack} \else \textbraceright \fi }
+
+\newstack{\bracketstack}
+\addQelement{\bracketstack}{START}
+\newif\ifinsidebracedgroup
+\AtBeginDocument {%
+   \let\originalbardelimiter\|
+   \let\originalbardelimiterS|
+   \def\mysbar{\peekQelement{\bracketstack}\ifthenelse{\equal{\poppedQelement}{s}}{\right\originalbardelimiter\popQelement{\bracketstack}}{\left\originalbardelimiter\addQelement{\bracketstack}{s}}}%
+   \let\|\mysbar
+   \mathcode`( 32768
+   \mathcode`) 32768
+   \mathcode`[ 32768
+   \mathcode`] 32768
+   \mathcode`| 32768
+
+   \begingroup
+       \lccode`\~`(
+       \lowercase{%
+   \endgroup
+       \let~\autoop
+   }\begingroup
+       \lccode`\~`)
+       \lowercase{%
+   \endgroup
+       \let~\autocp
+   }\begingroup
+       \lccode`\~`[
+       \lowercase{%
+   \endgroup
+       \let~\autoob
+   }\begingroup
+       \lccode`\~`]
+       \lowercase{%
+   \endgroup
+       \let~\autocb
+   }\begingroup
+       \lccode`\~`|
+       \lowercase{%
+   \endgroup
+       \let~\autooS
+   }}
+
+% remove extra space \left introduces
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+\newcommand{\simplepic}[2][width=5in]{\begin{center}\includegraphics[#1]{#2}\end{center}}

@@ -1,0 +1,19 @@
+.directory
+.vscode
+.DS_STORE
+.prettierignore
+.env
+*.lock
+
+# OCaml
+**/_build/**
+
+#syncthing
+.stfolder
+
+# Python
+.venv
+__pycache__
+
+# My Problem Set stuff
+Answers.pdf

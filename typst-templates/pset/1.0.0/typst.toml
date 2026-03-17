@@ -1,0 +1,24 @@
+[package]
+name = "pset"
+version = "1.0.0"
+description = "Crystal's problem set template"
+authors = ["Crystal McArdle-Ventura"]
+repository = ""
+entrypoint = "pset.typ"
+# categories = ["components", "utility"]
+# disciplines = [
+#   "chemistry", "communication", "economics", "education", "engineering",
+#   "geology", "mathematics", "physics",
+# ]
+# keywords = [
+#   "physics", "mathematics", "brace", "set", "product", "evaluate", "restrict",
+#   "integral", "gradient", "divergence", "curl", "vector", "field", "laplacian",
+#   "matrix", "determinant", "diagonal", "identity", "Jacobian", "Hessian",
+#   "transpose", "dagger", "conjugate", "Dirac", "braket", "differential",
+#   "derivative", "partial", "dv", "odv", "pdv", "Planck", "hbar", "tensor",
+#   "isotope", "signal", "electromagnetism", "mechanics", "quantum", "relativity",
+#   "imaginary", "notation",
+# ]
+# compiler = "0.13.0"
+# exclude = ["*.pdf", "*.py"]
+# license = "MIT"
