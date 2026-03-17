@@ -2,21 +2,28 @@ if status is-interactive
     # remove greeting message
     set fish_greeting
 
-    # prepare zoxide
-    eval "$(zoxide init fish)"
+    # Set up programs
+    if type -q starship
+        set -Ux STARSHIP_LOG error
+        eval "$(starship init fish)"
+    end
 
-    # start starship
-    set -Ux STARSHIP_LOG error
-    eval "$(starship init fish)"
+    if type -q zoxide
+        eval "$(zoxide init fish)"
+        alias cd="z"
+    end
+
+    # Set up some specific aliases
+    if type -q zypper
+        alias zyp="zypper"
+    end
+
+    if type -q eza
+        alias ls="eza"
+    end
 end
 
-# add ~/Scripts to path
-set PATH "$PATH:/home/crystal/Scripts"
-
 # aliases
-alias ls="eza"
-alias cd="z"
-alias zyp="zypper"
 alias gpu-power="sudo cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
 alias py="python3"
 alias ipy="ipython"
