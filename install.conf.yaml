@@ -12,6 +12,7 @@
     ~/.config/espanso: espanso
     ~/.config/fish: fish
     ~/.config/git: git
+    ~/.config/kitty: kitty
     ~/.config/texmf/tex/latex/local: latex-styles
     ~/.config/pip: pip
     ~/.config/pipewire: pipewire
