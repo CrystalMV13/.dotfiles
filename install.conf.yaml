@@ -7,14 +7,14 @@
 - clean: ['~']
 
 - link:
+    ~/.bashrc: bash/rc.bash
+    ~/.blerc: bash/blerc.bash
     ~/.config/espanso: espanso
     ~/.config/fish: fish
     ~/.config/git: git
     ~/.config/texmf/tex/latex/local: latex-styles
     ~/.config/pip: pip
     ~/.config/pipewire: pipewire
-    ~/.bashrc: bash/rc.bash
-    ~/.blerc: bash/blerc.bash
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/systemd/user: systemd-user
     ~/.local/share/typst/packages/templates: typst-templates
