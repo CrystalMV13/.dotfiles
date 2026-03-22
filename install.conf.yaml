@@ -18,6 +18,7 @@
     ~/.config/pipewire: pipewire
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/systemd/user: systemd-user
+    ~/.config/tmux: tmux
     ~/.local/share/typst/packages/templates: typst-templates
     ~/.config/VSCodium/User/keybindings.json: vscodium/keybindings.json
     ~/.config/VSCodium/User/settings.json: vscodium/settings.json
