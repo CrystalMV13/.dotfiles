@@ -177,7 +177,8 @@ matches:
         - Dorm you lived your senior year (if alum)
         - Cell phone number
         - Device type (iPhone or Android)
-        - We will verify your information and send you an activation email for the DUO mobile application.
+        
+        We will verify your information and send you an activation email for the DUO mobile application.
 
         {{hdsig}}
 
