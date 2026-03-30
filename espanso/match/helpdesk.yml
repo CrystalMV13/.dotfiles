@@ -288,7 +288,7 @@ matches:
             Name: [[name]]
 
 
-  - trigger: ":duoadd"
+  - trigger: ":duoaddpre"
     markdown: |
         Hello,
 
@@ -412,3 +412,14 @@ matches:
         params:
           layout: |
             Student's name: [[name]]
+
+
+  - trigger: ":duoaddpost"
+    markdown: |
+      Hi,
+
+      Thank you for contacting the Wellesley Computing Help Desk. We have updated the phone on your DUO Account, and you should now have received an email from DUO with an activation link to set up DUO Mobile on your phone.
+
+      Please don't hesitate to reach out if you run into any issues.
+
+      {{hdsig}}
