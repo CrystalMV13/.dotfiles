@@ -3,10 +3,11 @@
   "position": "top",
   "margin-bottom": -10,
   "spacing" : 0,
+  
   "modules-left": [
-  "hyprland/workspaces",
-  "custom/uptime",
-  "cpu"
+    "hyprland/workspaces",
+    "custom/uptime",
+    "cpu"
   ],
 
   "modules-center": ["clock"],
@@ -34,10 +35,10 @@
     "format-off": "{icon}", 
     "format-connected":"{icon}",
     "format-icons":{
-        "on":"󰂯",
-        "off": "󰂲",
-        "connected": "󰂱",
-        },
+      "on":"󰂯",
+      "off": "󰂲",
+      "connected": "󰂱",
+    },
     "on-click": "blueman-manager",
     "tooltip-format-connected":"{device_enumerate}"
   },
@@ -65,8 +66,7 @@
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "nm-connection-editor"
-
- },
+  },
 
   "cpu": {
     "interval": 1,
@@ -90,9 +90,9 @@
   },
   
   "backlight": {
-        "format": "{icon}  {percent}%",
-        "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
-        "tooltip": false
+    "format": "{icon}  {percent}%",
+    "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
+    "tooltip": false
   },
   
   "pulseaudio": {
@@ -105,35 +105,34 @@
   },
 
   "battery": {
-        "interval":2,
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+    "interval":2,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
   },
   
   "custom/lock": {
-  "tooltip": false,
-  "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
-  "format" : ""
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
+    "format" : ""
   },
 
   "custom/pomodoro": {
-	"format": "{}",
-	"return-type": "json",
-	"exec": "waybar-module-pomodoro --no-work-icons",
-	"on-click": "waybar-module-pomodoro toggle",
-	"on-click-right": "waybar-module-pomodoro reset",
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-pomodoro --no-work-icons",
+    "on-click": "waybar-module-pomodoro toggle",
+    "on-click-right": "waybar-module-pomodoro reset",
   },
-
 }
 
