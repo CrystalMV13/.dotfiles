@@ -453,3 +453,17 @@ matches:
       Thank you for contacting the Wellesley Computing Help Desk. Would you mind clarifying what exactly the issue you run into is? A description of the error message and/or a screenshot will be helpful in diagnosing your specific issue.
 
       {{hdsig}}
+
+
+  - trigger: ":passask"
+    markdown: |
+      Hello,
+
+      Thank you for contacting the Wellesley Computing Help Desk. We can reset your password manually. Please reply with the following information:
+
+      - Your class year
+      - The dorm you lived in your senior year
+
+      We will verify your information and reset your password.
+
+      {{hdsig}}
