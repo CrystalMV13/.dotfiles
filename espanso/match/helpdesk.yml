@@ -444,3 +444,12 @@ matches:
       Please login to MyWellesley at https://intranet.wellesley.edu with your email and password. You will be prompted to setup Duo. If you encounter an error message please let us know what it says or provide a screenshot.
 
       {{hdsig}}
+
+
+  - trigger: ":cantlogin"
+    markdown: |
+      Hello,
+
+      Thank you for contacting the Wellesley Computing Help Desk. Would you mind clarifying what exactly the issue you run into is? A description of the error message and/or a screenshot will be helpful in diagnosing your specific issue.
+
+      {{hdsig}}
