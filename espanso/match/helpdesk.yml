@@ -261,7 +261,17 @@ matches:
     markdown: |
         Hello,
 
-        Thank you for contacting the Wellesley Computing Help Desk and reporting this email. The email appears to be phishing. We are transferring it to our Phishing team for further investigation. Please delete the email if you haven't already done so.
+        Thank you for contacting the Wellesley Computing Help Desk and reporting this scam. It does appear to be phishing and we are transferring it to our phishing team for further investigation.
+
+        - If the item is in your email: click the three dots at the top right, and choose ‘Report Phishing’
+
+        - If the item is in your Shared With Me section of Google Drive: click the three dots to the right of the file, and choose ‘Report’ or ‘Block’, then Report it as spam
+
+        - If the item is in your Google Chat ‘Google Drive’ feed: hover your cursor over the 'shared x with you' text; click the three dots that appear, and click Delete. 
+
+        **If you have provided your Wellesley password, or approved an unexpected DUO 2FA notification, please immediately change your password at: [https://reset.wellesley.edu](https://reset.wellesley.edu)**
+
+        We will never ask for your DUO codes through text message, phone call, or email. 
 
         {{hdsig}}
 
