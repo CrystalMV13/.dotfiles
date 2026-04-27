@@ -423,3 +423,13 @@ matches:
       Please don't hesitate to reach out if you run into any issues.
 
       {{hdsig}}
+
+  - trigger: ":duoactive"
+    markdown: |
+      Hello,
+
+      Thank you for contacting the Wellesley Computing Help Desk. Your account is enabled, but you need to setup Duo 2fa.
+
+      Please login to MyWellesley at https://intranet.wellesley.edu with your email and password. You will be prompted to setup Duo. If you encounter an error message please let us know what it says or provide a screenshot.
+
+      {{hdsig}}
