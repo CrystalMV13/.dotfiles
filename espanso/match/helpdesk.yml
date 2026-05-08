@@ -118,11 +118,12 @@ matches:
     markdown: |
         Hi,
 
-        Thank you for contacting the Wellesley College Help Desk. Could you please confirm the following details?
-        - Class year
-        - Dorm you lived your senior year
+        Thank you for contacting the Wellesley College Help Desk about your Duo account. Could you please confirm the following details?
+          - For students or alumnae, your Class year
+          - For alumnae, the Dorm you lived your senior year
+          - For students, faculty, or staff, your Username and College ID number
         
-        We will verify your information and enable your DUO 2FA account. We will also send instructions on how to set it up.
+        We will verify your information and enable your Duo 2FA account. We will also send instructions on how to set it up.
 
         {{hdsig}}
     
@@ -170,15 +171,16 @@ matches:
     markdown: |
         Hi,
 
-        Thank you for contacting the Wellesley College Help Desk. We recommend installing the DUO mobile application and setting it up for Wellesley College. This will enable you to login with by approving a push notification, or entering a passcode from the app, and it will eliminate the need for a bypass code.
+        Thank you for contacting the Wellesley College Help Desk. Duo is requiring a more secure two-factor authentication method to login due to its Risk Assessment. To solve this, we recommend installing the Duo Mobile App and linking it to your Wellesley College account. This will enable you to login by approving a push notification or entering a time-sensitive passcode from the app, and it will prevent the need for requesting administrator bypass codes.
 
         Could you please confirm the following details?
-        - Class year
-        - Dorm you lived your senior year (if alum)
-        - Cell phone number
-        - Device type (iPhone or Android)
+          - For students or alumnae, your Class Year
+          - For alumnae, the dorm you lived your senior year
+          - Mobile phone number you use with Duo
+          - Mobile device type, iPhone or Android
+          - Non-Wellesley email address that you have on file with Wellesley
         
-        We will verify your information and send you an activation email for the DUO mobile application.
+        We will verify your information and send you a Duo Mobile activation email to your verified non-Wellesley email address, or to your Wellesley email address.
 
         {{hdsig}}
 
