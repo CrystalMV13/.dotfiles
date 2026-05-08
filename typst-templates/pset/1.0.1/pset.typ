@@ -35,7 +35,7 @@
   Ohm: sym.Omega
 )
 
-#let angle(content) = $lr(#sym.angle.l #content #sym.angle.r)$
+#let angle(..content) = $lr(#sym.chevron.l #content.pos().join(", ") #sym.chevron.r)$
 
 // Astro stuff
 #let Sun = math.dot.o
