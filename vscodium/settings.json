@@ -174,8 +174,9 @@
   "pythonIndent.trimLinesWithOnlyWhitespace": true,
   "pythonIndent.useTabOnHangingIndent": true,
   "editor.selectionClipboard": false,
-  "pylint.args": ["-j 0"],
-  "workbench.activityBar.location": "top",
+  "pylint.args": [
+    "-j 0"
+  ],
   "sqltools.results.reuseTabs": "connection",
   "ruff.lineLength": 100,
   "git.openRepositoryInParentFolders": "always",
@@ -287,4 +288,12 @@
   "svifpd.viewerUi.invertMouseWheelZoom": true,
   "basedpyright.analysis.typeCheckingMode": "basic",
   "autoDocstring.docstringFormat": "numpy",
+  "slidev.preview-sync": true,
+  "emmet.includeLanguages": {
+    "markdown": "html",
+    "vue": "html",
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "slidev.dev-command": "slidev",
+  "basedpyright.analysis.useLibraryCodeForTypes": true, // Needed for astropy.units
 }
