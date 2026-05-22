@@ -39,6 +39,9 @@ alias wellesley-vpn-disconnect="openvpn3 session-manage --disconnect --config We
 # pip 3.13
 alias pip="python3.13 -m pip"
 
+# Set up pnpm global stuff
+set -x PNPM_HOME "$HOME/.local/share/pnpm"
+set -x PATH "$PNPM_HOME:$PATH"
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:

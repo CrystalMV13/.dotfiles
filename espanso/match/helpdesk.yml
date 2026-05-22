@@ -118,11 +118,12 @@ matches:
     markdown: |
         Hi,
 
-        Thank you for contacting the Wellesley College Help Desk. Could you please confirm the following details?
-        - Class year
-        - Dorm you lived your senior year
+        Thank you for contacting the Wellesley College Help Desk about your Duo account. Could you please confirm the following details?
+          - For students or alumnae, your Class year
+          - For alumnae, the Dorm you lived your senior year
+          - For students, faculty, or staff, your Username and College ID number
         
-        We will verify your information and enable your DUO 2FA account. We will also send instructions on how to set it up.
+        We will verify your information and enable your Duo 2FA account. We will also send instructions on how to set it up.
 
         {{hdsig}}
     
@@ -170,15 +171,16 @@ matches:
     markdown: |
         Hi,
 
-        Thank you for contacting the Wellesley College Help Desk. We recommend installing the DUO mobile application and setting it up for Wellesley College. This will enable you to login with by approving a push notification, or entering a passcode from the app, and it will eliminate the need for a bypass code.
+        Thank you for contacting the Wellesley College Help Desk. Duo is requiring a more secure two-factor authentication method to login due to its Risk Assessment. To solve this, we recommend installing the Duo Mobile App and linking it to your Wellesley College account. This will enable you to login by approving a push notification or entering a time-sensitive passcode from the app, and it will prevent the need for requesting administrator bypass codes.
 
         Could you please confirm the following details?
-        - Class year
-        - Dorm you lived your senior year (if alum)
-        - Cell phone number
-        - Device type (iPhone or Android)
+          - For students or alumnae, your Class Year
+          - For alumnae, the dorm you lived your senior year
+          - Mobile phone number you use with Duo
+          - Mobile device type, iPhone or Android
+          - Non-Wellesley email address that you have on file with Wellesley
         
-        We will verify your information and send you an activation email for the DUO mobile application.
+        We will verify your information and send you a Duo Mobile activation email to your verified non-Wellesley email address, or to your Wellesley email address.
 
         {{hdsig}}
 
@@ -261,7 +263,17 @@ matches:
     markdown: |
         Hello,
 
-        Thank you for contacting the Wellesley Computing Help Desk and reporting this email. The email appears to be phishing. We are transferring it to our Phishing team for further investigation. Please delete the email if you haven't already done so.
+        Thank you for contacting the Wellesley Computing Help Desk and reporting this scam. It does appear to be phishing and we are transferring it to our phishing team for further investigation.
+
+        - If the item is in your email: click the three dots at the top right, and choose ‘Report Phishing’
+
+        - If the item is in your Shared With Me section of Google Drive: click the three dots to the right of the file, and choose ‘Report’ or ‘Block’, then Report it as spam
+
+        - If the item is in your Google Chat ‘Google Drive’ feed: hover your cursor over the 'shared x with you' text; click the three dots that appear, and click Delete. 
+
+        **If you have provided your Wellesley password, or approved an unexpected DUO 2FA notification, please immediately change your password at: [https://reset.wellesley.edu](https://reset.wellesley.edu)**
+
+        We will never ask for your DUO codes through text message, phone call, or email. 
 
         {{hdsig}}
 
@@ -288,7 +300,7 @@ matches:
             Name: [[name]]
 
 
-  - trigger: ":duoadd"
+  - trigger: ":duoaddpre"
     markdown: |
         Hello,
 
@@ -412,3 +424,48 @@ matches:
         params:
           layout: |
             Student's name: [[name]]
+
+
+  - trigger: ":duoaddpost"
+    markdown: |
+      Hi,
+
+      Thank you for contacting the Wellesley Computing Help Desk. We have updated the phone on your DUO Account, and you should now have received an email from DUO with an activation link to set up DUO Mobile on your phone.
+
+      Please don't hesitate to reach out if you run into any issues.
+
+      {{hdsig}}
+  
+
+  - trigger: ":duoactive"
+    markdown: |
+      Hello,
+
+      Thank you for contacting the Wellesley Computing Help Desk. Your account is enabled, but you need to setup Duo 2fa.
+
+      Please login to MyWellesley at https://intranet.wellesley.edu with your email and password. You will be prompted to setup Duo. If you encounter an error message please let us know what it says or provide a screenshot.
+
+      {{hdsig}}
+
+
+  - trigger: ":cantlogin"
+    markdown: |
+      Hello,
+
+      Thank you for contacting the Wellesley Computing Help Desk. Would you mind clarifying what exactly the issue you run into is? A description of the error message and/or a screenshot will be helpful in diagnosing your specific issue.
+
+      {{hdsig}}
+
+
+  - trigger: ":passask"
+    markdown: |
+      Hello,
+
+      Thank you for contacting the Wellesley Computing Help Desk. We can reset your password manually. Please reply with the following information:
+
+      - Your class year
+      - The dorm you lived in your senior year
+
+      We will verify your information and reset your password.
+
+      {{hdsig}}
