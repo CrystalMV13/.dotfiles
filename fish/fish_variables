@@ -3,5 +3,4 @@
 SETUVAR --export ANDROID_HOME:/home/crystal/Android/Sdk
 SETUVAR --export DOTFILES:/home/crystal/\x2edotfiles
 SETUVAR --export STARSHIP_LOG:error
-SETUVAR __fish_initialized:3800
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR __fish_initialized:4300
