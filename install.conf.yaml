@@ -18,6 +18,7 @@
     ~/.config/texmf/tex/latex/local: latex-styles
     ~/.config/pip: pip
     ~/.config/pipewire: pipewire
+    ~/.config/pypr: pypr
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/systemd/user: systemd-user
     ~/.config/tmux: tmux
