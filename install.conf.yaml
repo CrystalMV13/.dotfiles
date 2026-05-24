@@ -9,6 +9,7 @@
 - link:
     ~/.bashrc: bash/rc.bash
     ~/.blerc: bash/blerc.bash
+    ~/.config/elephant: elephant
     ~/.config/espanso: espanso
     ~/.config/fish: fish
     ~/.config/git: git
@@ -27,6 +28,7 @@
     ~/.config/VSCodium/User/settings.json: vscodium/settings.json
     ~/.config/VSCodium/User/snippets: vscodium/snippets
     ~/.config/VSCodium/User/globalStorage/draivin.hsnips/hsnips: vscodium/hypersnips
+    ~/.config/walker: walker
     ~/.config/waybar: waybar
     ~/.config/wireplumber: wireplumber
     ~/.config/yt-dlp.conf: yt-dlp/yt-dlp.conf
