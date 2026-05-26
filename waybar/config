@@ -3,7 +3,7 @@
   "position": "top",
   "margin-bottom": -10,
   "spacing" : 0,
-  
+
   "modules-left": [
     "hyprland/workspaces",
     "custom/uptime",
@@ -55,7 +55,7 @@
 
   "clock": {
     "tooltip": false,
-    "format": "{:%H:%M:%S  -  %A, %d}",
+    "format": "{:%I:%M%p - %A, %B %d, %Y}",
     "interval": 1
   },
 
