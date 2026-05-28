@@ -219,31 +219,23 @@ matches:
             
   - trigger: ":vpnaccess"
     markdown: |
-        Hello {{form.name}},
+        Hello,
 
         Thank you for contacting the Wellesley Computing Help Desk. To improve our security and ensure a seamless experience, we have moved VPN services from Cisco AnyConnect to OpenVPN. This change will make our VPN compatible with Duo, our Two-Factor Authentication solution thereby providing the much needed protection.
 
-        **What This Means for You**
-        - The next time you need to connect to the campus network from offsite, simply go to [https://wellesley.openvpn.com](https://wellesley.openvpn.com), 
+        What This Means for You
+        - The next time you need to connect to the campus network from offsite, simply go to https://wellesley.openvpn.com, 
         - The system will automatically detect that you do not have the new software and will guide you through the process of installing and setting up the OpenVPN client on your device. [Allow for a few minutes for the installation]
         - Depending on your type of device, you may be asked:
           - To enter in your username (include @wellesely.edu)
-          - To enter in  a server address or cloud ID, enter in [https://wellesley.openvpn.com](https://wellesley.openvpn.com)
-        
+          - To enter in  a server address or cloud ID, enter in  https://wellesley.openvpn.com
+
         This one-time process will ensure a more secure and reliable connection for you moving forward.
 
         Please let us know if you have any questions.
 
         {{hdsig}}
     paragraph: true
-    vars:
-      - name: "form"
-        type: "form"
-        params:
-          layout: |
-            Name: [[name]]
-      - name: "clipb"
-        type: "clipboard"
 
 
   - trigger: ":office365"
