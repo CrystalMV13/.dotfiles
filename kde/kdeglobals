@@ -135,6 +135,13 @@ ForegroundVisited=155,89,182
 [General]
 ColorScheme=kvantum-dark
 
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+# Required to get Dolphin to recognize Qt theme on Hyprland
+[UiSettings]
+ColorScheme=qt6ct
+
 [WM]
 activeBackground=39,44,49
 activeBlend=252,252,252
@@ -142,7 +149,3 @@ activeForeground=252,252,252
 inactiveBackground=32,36,40
 inactiveBlend=161,169,177
 inactiveForeground=161,169,177
-
-# Required to get Dolphin to recognize Qt theme on Hyprland
-[UiSettings]
-ColorScheme=qt6ct
