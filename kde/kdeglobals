@@ -138,7 +138,10 @@ ColorScheme=kvantum-dark
 [KShortcutsDialog Settings]
 Dialog Size=600,480
 
-# Required to get Dolphin to recognize Qt theme on Hyprland
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
+
 [UiSettings]
 ColorScheme=qt6ct
 
