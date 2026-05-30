@@ -1,0 +1,5 @@
+terminal = "kitty"
+browser = "vivaldi --force-device-scale-factor=1"
+fileManager = "dolphin"
+menu = "hyprlauncher"
+editor = "codium"
