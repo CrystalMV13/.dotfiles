@@ -13,15 +13,13 @@ if status is-interactive
         alias cd="z"
     end
 
-    # Set up some specific aliases
-    if type -q zypper
-        alias zyp="zypper"
-    end
-
     if type -q eza
         alias ls="eza"
     end
 end
+
+set -Ux DOTFILES $HOME/.dotfiles
+set -Ux NIXOS_DIR $DOTFILES/nixos
 
 # aliases
 alias gpu-power="sudo cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
@@ -29,15 +27,11 @@ alias py="python3"
 alias ipy="ipython"
 
 # larger command shorthands
-alias update='sudo snapper create -d "Before zyp dup"; sudo zyp dup'
 alias mylocalip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
 # Wellesley VPN
 alias wellesley-vpn="openvpn3 session-start --config Wellesley"
 alias wellesley-vpn-disconnect="openvpn3 session-manage --disconnect --config Wellesley"
-
-# pip 3.13
-alias pip="python3.13 -m pip"
 
 # Set up pnpm global stuff
 set -x PNPM_HOME "$HOME/.local/share/pnpm"
