@@ -13,7 +13,7 @@ commands = {
 }
 
 hl.on("hyprland.start", function()
-  for command in list_iter(commands) do
+  for _, command in ipairs(commands) do
     hl.exec_cmd(command)
   end
 end)
