@@ -1,5 +1,12 @@
 require("common.programs")
 
+-- reduces delay to consume scroll events as binds. prevents scrolling during zoom
+hl.config({
+  binds = {
+    scroll_event_delay = 0 
+  }
+})
+
 -- See https://wiki.hypr.land/Configuring/Keywords/
 
 -- Power stuff
