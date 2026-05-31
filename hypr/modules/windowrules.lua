@@ -40,7 +40,7 @@ hl.window_rule({
   name  = "make-vivaldi-bitwarden-popup-float",
   match = {
   class = "vivaldi-stable",
-  title = ". *Bitwarden.*",
+  title = ".*Bitwarden.*",
   },
   float = true,
 })
