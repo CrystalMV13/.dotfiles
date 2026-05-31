@@ -21,7 +21,7 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + T", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + F", hl.dsp.exec_cmd(fileManager))
-hl.bind("SUPER + I", hl.dsp.exec_cmd(editor .. "~/.dotfiles"))
+hl.bind("SUPER + I", hl.dsp.exec_cmd(editor .. " ~/.dotfiles"))
 hl.bind("SUPER + A", hl.dsp.window.float())
 
 -- Move focus with SUPER + arrow keys
