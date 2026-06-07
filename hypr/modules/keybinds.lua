@@ -23,6 +23,7 @@ hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + F", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + I", hl.dsp.exec_cmd(editor .. " ~/.dotfiles"))
 hl.bind("SUPER + A", hl.dsp.window.float())
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 -- Move focus with SUPER + arrow keys
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
@@ -39,8 +40,8 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind("SUPER + S",     hl.dsp.workspace.toggle_special("magic"))
-hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind("SUPER + S",     hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Zoom
 hl.bind("SUPER + mouse_up", hl.dsp.exec_cmd("pypr zoom ++0.4"))
