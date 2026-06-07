@@ -63,9 +63,9 @@ hl.window_rule({
 })
 
 hl.window_rule({
-  name  = "make-vivaldi-settings-float",
+  name  = "make-settings-float",
   match = {
-  title = "Vivaldi Settings.*",
+  title = ".*Settings.*",
   },
   float = true,
 })
