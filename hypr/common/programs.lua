@@ -1,5 +1,5 @@
 terminal = "kitty"
-browser = "vivaldi --force-device-scale-factor=1"
+browser = "vivaldi --force-device-scale-factor=1 --ozone-platform=wayland"
 fileManager = "dolphin"
 menu = "hyprlauncher"
 editor = "codium"
