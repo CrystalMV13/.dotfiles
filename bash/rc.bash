@@ -10,9 +10,6 @@
 # here, since multilingual X sessions would not work properly if LANG is over-
 # ridden in every subshell.
 
-# ble.sh header
-# [[ $- == *i* ]] && source /home/crystal/ble.sh/ble.sh --noattach
-
 test -s ~/.alias && . ~/.alias || true
 
 alias sudo='sudo ' # needed to use sudo zyp
@@ -23,10 +20,6 @@ alias ipy='ipython'
 alias pipin="pip install --break-system-packages"
 
 eval "$(starship init bash)"
-
-# ble.sh footer
-# [[ ${BLE_VERSION-} ]] && ble-attach
-. "$HOME/.cargo/env"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
