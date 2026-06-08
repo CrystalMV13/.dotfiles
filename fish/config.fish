@@ -37,6 +37,8 @@ alias wellesley-vpn-disconnect="openvpn3 session-manage --disconnect --config We
 set -x PNPM_HOME "$HOME/.local/share/pnpm"
 set -x PATH "$PNPM_HOME:$PATH"
 
+set -Ux GPG_TTY $(tty) # to fix gpg signing with passphrase
+
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
 #   - the correct directories to the PATH

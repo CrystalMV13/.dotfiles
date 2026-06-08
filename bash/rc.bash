@@ -19,6 +19,8 @@ alias py='python3'
 alias ipy='ipython'
 alias pipin="pip install --break-system-packages"
 
+export GPG_TTY=$(tty) # to fix GPG signing with passphrase
+
 eval "$(starship init bash)"
 
 # >>> conda initialize >>>
