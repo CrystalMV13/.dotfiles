@@ -54,3 +54,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# If fish available, switch to it
+if command -v fish > /dev/null 2>&1; then
+    fish
+fi
