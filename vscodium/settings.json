@@ -263,7 +263,9 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "owtc.explorerContextMenu": true,
   "workbench.editorAssociations": {
-    "*.pdf": "latex-workshop-pdf-hook"
+    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
+    "*.pdf": "latex-workshop-pdf-hook",
+    "*.qrc": "qt-core.qrcEditor"
   },
   "markdownlint.config": {
     "MD012": false,
@@ -293,5 +295,32 @@
   },
   "go.toolsManagement.autoUpdate": true,
   "slidev.dev-command": "slidev",
-  "basedpyright.analysis.useLibraryCodeForTypes": true, // Needed for astropy.units
+  "basedpyright.analysis.useLibraryCodeForTypes": true,
+  "[lua]": {
+    
+    "editor.quickSuggestions": {
+      "comments": "inline",
+      "other": "on",
+      "strings": "on"
+    },
+    "editor.semanticHighlighting.enabled": true
+  }, // Needed for astropy.units
+  "Lua.workspace.library": [
+    "/usr/share/hypr/stubs"
+  ],
+  "csv.maxFileSizeMB": 100,
+  "workbench.colorTheme": "Monochromator Dark Aquamarine",
+  // Suggested from Monochromator:
+  // This ensures that string interpolation delimiters look right
+  "editor.bracketPairColorization.enabled": false,
+
+  // This ensures that variables do not look similar to comments
+  "editor.showUnused": false,
+  "git.enableCommitSigning": true,
+  "qt-core.additionalQtPaths": [
+    {
+      "name": "Qt-6.11.0-linux-g++-x86_64_from_PATH",
+      "path": "/run/current-system/sw/bin/qtpaths"
+    }
+  ]
 }
