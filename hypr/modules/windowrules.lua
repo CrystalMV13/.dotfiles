@@ -78,3 +78,13 @@ hl.window_rule({
   },
   float = true,
 })
+
+hl.window_rule({
+  name = "thunderbird-bigger-write-dialog",
+  match = {
+    class = "thunderbird",
+    title = "Write: .*",
+  },
+  float = true,
+  size = "800 700",
+})
