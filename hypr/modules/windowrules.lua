@@ -63,6 +63,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "picture-in-picture",
+  match = {
+    title = ".*Picture in picture.*",
+  },
+  float = true,
+  keep_aspect_ratio = true,
+})
+
+hl.window_rule({
   name  = "make-settings-float",
   match = {
   title = ".*Settings.*",
