@@ -228,7 +228,7 @@ matches:
         - The system will automatically detect that you do not have the new software and will guide you through the process of installing and setting up the OpenVPN client on your device. [Allow for a few minutes for the installation]
         - Depending on your type of device, you may be asked:
           - To enter in your username (include @wellesely.edu)
-          - To enter in  a server address or cloud ID, enter in  https://wellesley.openvpn.com
+          - To enter in  a server address or cloud ID, enter in https://wellesley.openvpn.com
 
         This one-time process will ensure a more secure and reliable connection for you moving forward.
 
