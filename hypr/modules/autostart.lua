@@ -1,10 +1,11 @@
 commands = {
   -- services
-  "waybar",
-  "dunst",
-  "hyprpaper",
-  "hypridle",
+  -- "waybar",
+  "noctalia",
+  -- "hyprpaper",
+  -- "hypridle",
   "pypr",
+  "qs -c overview",
   "elephant & walker --gapplication-service",
   
   -- apps
