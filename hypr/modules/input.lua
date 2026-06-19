@@ -6,7 +6,7 @@ hl.config({
     kb_options = "compose:ins",
     kb_rules   = "",
 
-    follow_mouse = 1,
+    follow_mouse = 2,
 
     accel_profile = "flat",
     sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
