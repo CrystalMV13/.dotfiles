@@ -39,6 +39,8 @@ for i = 1, 10 do
   hl.bind("SUPER + SHIFT + " .. key,   hl.dsp.window.move({ workspace = i }))
 end
 
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd("qs ipc -c overview call overview toggle"))
+
 -- Example special workspace (scratchpad)
 -- hl.bind("SUPER + S",     hl.dsp.workspace.toggle_special("magic"))
 -- hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
@@ -46,6 +48,10 @@ end
 -- Zoom
 hl.bind("SUPER + mouse_up", hl.dsp.exec_cmd("pypr zoom ++0.4"))
 hl.bind("SUPER + mouse_down", hl.dsp.exec_cmd("pypr zoom --0.4"))
+
+-- Move between workspaces with mouse tilt
+hl.bind("SUPER + mouse_left", hl.dsp.focus({ workspace = "m-1" }))
+hl.bind("SUPER + mouse_right", hl.dsp.focus({ workspace = "m+1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
