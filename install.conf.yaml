@@ -14,6 +14,7 @@
     ~/.config/fish: fish
     ~/.config/git: git
     ~/.config/hypr: hypr
+    ~/.config/dolphinrc: kde/dolphinrc
     ~/.config/kitty: kitty
     ~/.config/texmf/tex/latex/local: latex-styles
     ~/.config/pip: pip
