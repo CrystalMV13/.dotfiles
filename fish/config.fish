@@ -37,6 +37,9 @@ alias wellesley-vpn-disconnect="openvpn3 session-manage --disconnect --config We
 set -x PNPM_HOME "$HOME/.local/share/pnpm"
 set -x PATH "$PNPM_HOME:$PATH"
 
+# Add local scripts to PATH
+set -x PATH "/home/crystal/.local/bin:$PATH"
+
 set -Ux GPG_TTY $(tty) # to fix gpg signing with passphrase
 
 # BEGIN opam configuration
