@@ -6,9 +6,9 @@ Wants=network-online.target
 
 [Service]
 Type=notify
-ExecStartPre=-/usr/bin/mkdir -p %h/"Google Drive"/%i
+ExecStartPre=/usr/bin/env mkdir -p %h/Remotes/%i
 ExecStart= \
-  /usr/bin/rclone mount \
+  /usr/bin/env rclone mount \
     --config=%h/.config/rclone/rclone.conf \
     --allow-non-empty \
     --vfs-cache-mode full \
@@ -21,8 +21,8 @@ ExecStart= \
     --umask 022 \
     --drive-export-formats=desktop \
     --transfers 12 \
-    %i: %h/"Google Drive"/%i
-ExecStop=/bin/fusermount -u -z %h/"Google Drive"/%i
+    %i: %h/Remotes/%i
+ExecStop=/usr/bin/env fusermount -u -z %h/Remotes/%i
 
 [Install]
 WantedBy=default.target
