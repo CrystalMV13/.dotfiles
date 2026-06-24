@@ -72,6 +72,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "float-zoom-meeting",
+  match = {
+    title = ".*Zoom Meeting",
+  },
+  float = true,
+  keep_aspect_ratio = true,
+})
+
+hl.window_rule({
   name  = "make-settings-float",
   match = {
     title = ".*Settings.*",
@@ -87,4 +96,32 @@ hl.window_rule({
   },
   float = true,
   size = "800 700",
+})
+
+hl.window_rule({
+  name = "float-dolphin",
+  match = {
+    class = "org.kde.dolphin",
+    title = "negative:^(Properties.*|Copying.*|(File|Folder) Already Exists.*|View Display Style.*|Question.*|Moving.*|Paste Clipboard Content.*|Choose Application.*)$"
+  },
+  float = true,
+  size = "1200 950"
+})
+
+hl.window_rule({
+  name = "float-thunderbird-dialogs",
+  match = {
+    class = "thunderbird",
+    initial_title = "Calendar Reminders",
+  },
+  float = true,
+})
+
+hl.window_rule({
+  name = "float-astroimagej",
+  match = {
+    class = "ij-ImageJ",
+    title = "AstroImageJ",
+  },
+  float = true,
 })
