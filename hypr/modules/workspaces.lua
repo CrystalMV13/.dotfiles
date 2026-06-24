@@ -8,16 +8,14 @@ hl.config({
 
 -- Terminal workspace
 hl.on("hyprland.start", function ()
-    hl.exec_cmd(terminal, { workspace = "special:terminal" })
+    hl.exec_cmd(terminal, { workspace = "special:terminal silent" })
 end)
 hl.bind("ALT + T", hl.dsp.workspace.toggle_special("terminal"))
 
 -- Thunderbird workspace
-hl.window_rule({
-  name = "thunderbird-workspace",
-  match = { class = "thunderbird" },
-  workspace = "special:thunderbird"
-})
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("thunderbird", { workspace = "special:terminal silent" })
+end)
 hl.bind("ALT + B", hl.dsp.workspace.toggle_special("thunderbird"))
 
 -- Music workspace
