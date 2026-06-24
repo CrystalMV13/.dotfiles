@@ -47,6 +47,10 @@ hl.config({
   animations = {
     enabled = true,
   },
+
+  cursor = {
+      no_hardware_cursors = true, -- might help with some laggy cursors
+  },
 })
 
 -- https://wiki.hypr.land/Configuring/Variables/#animations
@@ -96,8 +100,9 @@ hl.config({
 })
 
 hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")
-hl.env("XCURSOR_SIZE", 32)
+hl.env("XCURSOR_THEME", "Nordzy-hyprcursors")
 hl.env("HYPRCURSOR_SIZE", 32)
+hl.env("XCURSOR_SIZE", 32)
 
 
 ---------------------------------
