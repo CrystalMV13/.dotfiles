@@ -6,7 +6,7 @@ commands = {
   -- "hypridle",
   "pypr",
   "qs -c overview",
-  "elephant & walker --gapplication-service",
+  "walker --gapplication-service",
   
   -- apps
   "protonmail-bridge-gui",
