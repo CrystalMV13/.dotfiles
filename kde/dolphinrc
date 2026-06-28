@@ -1,5 +1,10 @@
 MenuBar=Disabled
 
+[ContextMenu]
+ShowAddToPlaces=false
+ShowSortBy=false
+ShowViewMode=false
+
 [DetailsMode]
 RightPadding=50
 
@@ -7,13 +12,12 @@ RightPadding=50
 2 screens: Window-Maximized=true
 
 [General]
-DynamicView=true
 FilterBar=true
 GlobalViewProps=false
 HideXTrashFile=true
 OpenExternallyCalledFolderInNewTab=true
 Version=202
-ViewPropsTimestamp=2026,6,4,11,14,39.596
+ViewPropsTimestamp=2026,6,25,16,15,1.158
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -33,3 +37,6 @@ Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cur
 
 [UiSettings]
 ColorScheme=default
+
+[VersionControl]
+enabledPlugins=Git
