@@ -49,10 +49,6 @@
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "pdfLaTeX",
-      "tools": ["pdflatex"]
-    },
-    {
       "name": "latexmk 🔃",
       "tools": ["latexmk"]
     },
@@ -187,7 +183,6 @@
     "%DOCFILE%.ind",
     "%DOCFILE%.lof",
     "%DOCFILE%.lot",
-    "%DOCFILE%.out",
     "%DOCFILE%.toc",
     "%DOCFILE%.acn",
     "%DOCFILE%.acr",
@@ -203,7 +198,9 @@
     "%DOCFILE%.synctex.gz(busy)",
     "%DOCFILE%.nav",
     "%DOCFILE%.vrb",
-    "%DOCFILE%.synctex.gz"
+    "%DOCFILE%.synctex.gz",
+    "%DOCFILE%.aux",
+    "%DOCFILE%.out",
   ],
   "latex-workshop.latex.clean.method": "glob",
   "latex-workshop.latex.autoClean.run": "onBuilt",
@@ -322,5 +319,7 @@
       "name": "Qt-6.11.0-linux-g++-x86_64_from_PATH",
       "path": "/run/current-system/sw/bin/qtpaths"
     }
-  ]
+  ],
+  "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|\\\\todo",
+  "todo-tree.highlights.enabled": true,
 }
