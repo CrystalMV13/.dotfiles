@@ -14,7 +14,7 @@ hl.bind("ALT + T", hl.dsp.workspace.toggle_special("terminal"))
 
 -- Thunderbird workspace
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("thunderbird", { workspace = "special:terminal silent" })
+  hl.exec_cmd("thunderbird", { workspace = "special:thunderbird silent" })
 end)
 hl.bind("ALT + B", hl.dsp.workspace.toggle_special("thunderbird"))
 
@@ -27,9 +27,7 @@ hl.window_rule({
 hl.bind("ALT + M", hl.dsp.workspace.toggle_special("music"))
 
 -- Slack workspace
-hl.window_rule({
-  name = "slack-workspace",
-  match = { class = "slack" },
-  workspace = "special:slack"
-})
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("slack", { workspace = "special:slack silent" })
+end)
 hl.bind("ALT + S", hl.dsp.workspace.toggle_special("slack"))
