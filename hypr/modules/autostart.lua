@@ -1,16 +1,12 @@
-commands = {
+local commands = {
   -- services
-  -- "waybar",
   "noctalia",
-  -- "hyprpaper",
-  -- "hypridle",
   "pypr",
   "qs -c overview",
   "walker --gapplication-service",
   
   -- apps
-  "protonmail-bridge-gui",
-  "slack",
+  "proton-bridge --noninteractive",
 }
 
 hl.on("hyprland.start", function()
