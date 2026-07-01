@@ -1,1 +1,2 @@
 systemd-user/*.target.wants
+git/signingkey
