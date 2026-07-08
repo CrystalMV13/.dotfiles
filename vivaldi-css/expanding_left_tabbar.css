@@ -3,7 +3,7 @@
 /* Animate the tabs, set initial width. */
 #tabs-tabbar-container.left {
   transition: all 250ms ease !important;
-  width: 36px !important;
+  width: 40px !important;
   --scrollbarWidth: 0;
 }
 
@@ -16,7 +16,7 @@
   z-index: 200 !important;
   height: 100% !important;
   transition: all 250ms ease !important;
-  width: 30px;
+  width: 40px;
 }
 
 .tabbar-wrapper:hover {
@@ -24,7 +24,7 @@
 }
 
 #webview-container {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 @media all and (display-mode: fullscreen) {
@@ -35,7 +35,7 @@
 
 /* Shunt the status info (text on hover) over to accomodate tabs */
 #webview-container~.StatusInfo {
-  left: 36px !important;
+  left: 40px !important;
 }
 
 .newtab {
@@ -53,4 +53,11 @@
 }
 
 .tab-strip {
-  margin-right: 3px !important; }
+  margin-right: 3px !important;
+}
+
+#browser.fullscreen {
+  #tabs-tabbar-container.left {
+    display: none !important;
+  }
+}
