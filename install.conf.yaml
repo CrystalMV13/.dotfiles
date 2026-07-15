@@ -30,7 +30,6 @@
     ~/.config/VSCodium/User/snippets: vscodium/snippets
     ~/.config/VSCodium/User/globalStorage/draivin.hsnips/hsnips: vscodium/hypersnips
     ~/.config/walker: walker
-    ~/.config/waybar: waybar
     ~/.config/wireplumber: wireplumber
     ~/.config/yt-dlp.conf: yt-dlp/yt-dlp.conf
     /usr/lib/systemd/system-sleep/rclone: scripts/rclone-sleep
