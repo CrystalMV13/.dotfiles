@@ -15,6 +15,7 @@
     ~/.config/git: git
     ~/.config/hypr: hypr
     ~/.config/dolphinrc: kde/dolphinrc
+    ~/.config/kdeglobals: kde/kdeglobals
     ~/.config/kitty: kitty
     ~/.config/texmf/tex/latex/local: latex-styles
     ~/.config/pip: pip
