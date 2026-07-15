@@ -32,14 +32,6 @@ hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with SUPER + [0-9]
--- Move active window to a workspace with SUPER + SHIFT + [0-9]
-for i = 1, 10 do
-  local key = i % 10 -- 10 maps to key 0
-  hl.bind("SUPER + " .. key,       hl.dsp.focus({ workspace = i}))
-  hl.bind("SUPER + SHIFT + " .. key,   hl.dsp.window.move({ workspace = i }))
-end
-
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd("qs ipc -c overview call overview toggle"))
 
 -- Example special workspace (scratchpad)

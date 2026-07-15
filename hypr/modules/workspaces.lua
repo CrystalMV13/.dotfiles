@@ -1,4 +1,18 @@
 require("common.programs")
+local smw = require("plugins.split-monitor-workspaces")
+
+smw.setup({
+  workspace_count = 10,
+  monitor_priority = { "eDP-1", },
+})
+
+for i = 1, smw.get_amount_of_workspaces() do
+    local n = tostring(i)
+    if n == "10" then n = "0" end
+    hl.bind("SUPER + " .. n, smw.workspace(n)) -- these binds action on the current workspace thanks to smw
+    hl.bind("SUPER + SHIFT + " .. n, smw.move_to_workspace(n))
+    hl.bind("SUPER + SHIFT + ALT + " .. n, smw.move_to_workspace_silent(n))
+end
 
 hl.config({
   misc = {
