@@ -13,6 +13,7 @@
         "-file-line-error",
         "-pdf",
         "-outdir=%OUTDIR%",
+        "-aux-directory=tmp",
         "%DOC%"
       ],
       "env": {}
@@ -201,9 +202,10 @@
     "%DOCFILE%.synctex.gz",
     "%DOCFILE%.aux",
     "%DOCFILE%.out",
+    "%DOCFILE%.lod",
   ],
   "latex-workshop.latex.clean.method": "glob",
-  "latex-workshop.latex.autoClean.run": "onBuilt",
+  // "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.view.pdf.color.dark.backgroundColor": "",
   "latex-workshop.view.pdf.invert": 0.95,
   "latex-workshop.view.pdf.invertMode.brightness": 1.5,
@@ -306,7 +308,6 @@
     "/usr/share/hypr/stubs"
   ],
   "csv.maxFileSizeMB": 100,
-  "workbench.colorTheme": "Monochromator Dark Aquamarine",
   // Suggested from Monochromator:
   // This ensures that string interpolation delimiters look right
   "editor.bracketPairColorization.enabled": false,
@@ -322,4 +323,13 @@
   ],
   "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|\\\\todo",
   "todo-tree.highlights.enabled": true,
+  "workbench.colorTheme": "Monochromator Dark Aquamarine",
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
+  "git.blame.editorDecoration.enabled": true,
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "#ff8df7",
+  },
 }
