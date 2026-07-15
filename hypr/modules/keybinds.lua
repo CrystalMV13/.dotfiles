@@ -1,12 +1,5 @@
 require("common.programs")
 
--- reduces delay to consume scroll events as binds. prevents scrolling during zoom
-hl.config({
-  binds = {
-    scroll_event_delay = 0 
-  }
-})
-
 -- See https://wiki.hypr.land/Configuring/Keywords/
 
 -- Power stuff
@@ -39,15 +32,14 @@ hl.bind("SUPER + TAB", hl.dsp.exec_cmd("qs ipc -c overview call overview toggle"
 -- hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Zoom
-hl.bind("SUPER + mouse_up", hl.dsp.exec_cmd("pypr zoom ++0.4"))
-hl.bind("SUPER + mouse_down", hl.dsp.exec_cmd("pypr zoom --0.4"))
-
--- Move between workspaces with mouse tilt
-hl.bind("SUPER + mouse_left", hl.dsp.focus({ workspace = "m-1" }))
-hl.bind("SUPER + mouse_right", hl.dsp.focus({ workspace = "m+1" }))
-
--- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse_down", hl.dsp.exec_cmd("pypr zoom ++0.4"))
+hl.bind("SUPER + mouse_up", hl.dsp.exec_cmd("pypr zoom --0.4"))
+-- reduces delay to consume scroll events as binds. prevents scrolling during zoom
+hl.config({
+  binds = {
+    scroll_event_delay = 0 
+  }
+})
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Bind super + middle click to closing a window
