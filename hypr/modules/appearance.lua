@@ -100,7 +100,7 @@ hl.config({
 })
 
 hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")
-hl.env("XCURSOR_THEME", "Nordzy-hyprcursors")
+hl.env("XCURSOR_THEME", "Nordzy-cursors")
 hl.env("HYPRCURSOR_SIZE", 32)
 hl.env("XCURSOR_SIZE", 32)
 
