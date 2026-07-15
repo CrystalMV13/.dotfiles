@@ -3,10 +3,12 @@ local commands = {
   "noctalia",
   "pypr",
   "qs -c overview",
+  "elephant",
   "walker --gapplication-service",
+  "moniqued",
   
   -- apps
-  "proton-bridge --noninteractive",
+  "protonmail-bridge-gui --no-window",
 }
 
 hl.on("hyprland.start", function()
