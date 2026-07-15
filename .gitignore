@@ -1,2 +1,3 @@
 systemd-user/*.target.wants
 git/signingkey
+hypr/monitors.*
