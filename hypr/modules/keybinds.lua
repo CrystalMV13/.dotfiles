@@ -40,6 +40,13 @@ hl.config({
     scroll_event_delay = 0 
   }
 })
+
+-- Move between workspaces with mouse tilt
+hl.bind("SUPER + mouse_left", hl.dsp.focus({ workspace = "m-1" }))
+hl.bind("SUPER + mouse_right", hl.dsp.focus({ workspace = "m+1" }))
+
+-- Move/resize windows with mainMod + LMB/RMB and dragging
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Bind super + middle click to closing a window
