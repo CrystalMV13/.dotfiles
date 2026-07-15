@@ -110,6 +110,7 @@ hl.env("XCURSOR_SIZE", 32)
 ---------------------------------
 hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_STYLE_OVERRIDE", "kvantum")
 
 hl.env("GTK_THEME", "adw-gtk3-dark")
 hl.env("GTK_APPLICATION_PREFER_DARK_THEME", 1)
