@@ -125,3 +125,14 @@ hl.window_rule({
   },
   float = true,
 })
+
+hl.window_rule({
+  name = "waydroid-as-phone",
+  match = {
+    class = "^(Waydroid|waydroid\\..*)$",
+  },
+  float = true,
+  size = "660 1000",
+  min_size = "660 1000",
+  max_size = "660 1000",
+})
