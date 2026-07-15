@@ -6,10 +6,10 @@ require("common.programs")
 hl.bind("SUPER + CTRL + SHIFT + X", hl.dsp.exec_cmd("shutdown now"))
 hl.bind("SUPER + CTRL + SHIFT + R", hl.dsp.exec_cmd("shutdown -r now"))
 
-hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("nc -U /run/user/1000/walker/walker.sock")) -- faster way to open walker
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(menu))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd(lockscreen))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + T", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + Q", hl.dsp.window.close())
@@ -17,7 +17,8 @@ hl.bind("SUPER + SHIFT + Q", hl.dsp.window.kill())
 hl.bind("SUPER + F", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + I", hl.dsp.exec_cmd(editor .. " ~/.dotfiles"))
 hl.bind("SUPER + A", hl.dsp.window.float())
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+hl.bind("SUPER + P", hl.dsp.window.pin())
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd(screenshot))
 
 -- Move focus with SUPER + arrow keys
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
