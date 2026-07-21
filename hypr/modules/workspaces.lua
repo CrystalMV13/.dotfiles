@@ -14,12 +14,6 @@ for i = 1, smw.get_amount_of_workspaces() do
     hl.bind("SUPER + SHIFT + ALT + " .. n, smw.move_to_workspace_silent(n))
 end
 
-hl.config({
-  misc = {
-    focus_on_activate = true,
-  },
-})
-
 -- Terminal workspace
 hl.on("hyprland.start", function ()
     hl.exec_cmd(terminal, { workspace = "special:terminal silent" })
@@ -45,3 +39,15 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("slack", { workspace = "special:slack silent" })
 end)
 hl.bind("ALT + S", hl.dsp.workspace.toggle_special("slack"))
+
+-- Obsidian workspace
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("obsidian", { workspace = "special:obsidian silent" })
+end)
+hl.bind("ALT + N", hl.dsp.workspace.toggle_special("obsidian"))
+
+hl.config({
+  misc = {
+    focus_on_activate = true, -- allow windows to focus, esp. when I need to switch workspaces
+  },
+})
