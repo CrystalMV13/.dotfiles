@@ -22,7 +22,7 @@ set -Ux DOTFILES $HOME/.dotfiles
 set -Ux NIXOS_DIR $DOTFILES/nixos
 
 # aliases
-alias gpu-power="sudo cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
+alias gpu-power="cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
 alias py="python3"
 alias ipy="ipython"
 
