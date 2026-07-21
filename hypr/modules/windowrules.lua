@@ -145,3 +145,12 @@ hl.window_rule({
   min_size = "660 1000",
   max_size = "660 1000",
 })
+
+hl.window_rule({
+  name = "zoom-float-non-main-windows",
+  match = {
+    class = "zoom",
+    title = "negative:^(Meeting)$"
+  },
+  float = true,
+})
