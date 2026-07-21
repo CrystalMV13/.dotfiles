@@ -13,7 +13,7 @@ error_symbol = '[⟣](red)'
 disabled = false
 style = "teal"
 show_notifications = true
-min_time_to_notify = 120_000
+min_time_to_notify = 10_000
 format = "took [$duration]($style)\n\n"
 
 [directory]
