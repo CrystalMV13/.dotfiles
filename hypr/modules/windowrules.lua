@@ -109,6 +109,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "ignore-dolphin-progress-window",
+  match = {
+    class = "org.kde.dolphin",
+    title = "^(Copying.*|Moving.*|Deleting.*)$",
+  },
+  focus_on_activate = false,
+})
+
+hl.window_rule({
   name = "float-thunderbird-dialogs",
   match = {
     class = "thunderbird",
