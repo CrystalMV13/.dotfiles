@@ -102,7 +102,7 @@ hl.window_rule({
   name = "float-dolphin",
   match = {
     class = "org.kde.dolphin",
-    title = "negative:^(Properties.*|Copying.*|(File|Folder) Already Exists.*|View Display Style.*|Question.*|Moving.*|Paste Clipboard Content.*|Choose Application.*|Extracting Files .*|Compressing .*|Hide this File?.*|Delete Permanently.*|Progress Dialog.*|Deleting.*|Create New Folder.*)$"
+    title = "negative:^(Properties.*|Copying.*|(File|Folder) Already Exists.*|View Display Style.*|Question.*|Moving.*|Paste Clipboard Content.*|Choose Application.*|Extracting Files .*|Compressing .*|Hide this File?.*|Delete Permanently.*|Progress Dialog.*|Deleting.*|Create New Folder.*|Edit Places Entry.*|Select Icon.*)$"
   },
   float = true,
   size = "1200 950"
