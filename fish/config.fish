@@ -40,8 +40,6 @@ set -x PATH "$PNPM_HOME:$PATH"
 # Add local scripts to PATH
 set -x PATH "/home/crystal/.local/bin:$PATH"
 
-set -Ux GPG_TTY $(tty) # to fix gpg signing with passphrase
-
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
 #   - the correct directories to the PATH

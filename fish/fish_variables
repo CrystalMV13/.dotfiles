@@ -2,7 +2,6 @@
 # VERSION: 3.0
 SETUVAR --export ANDROID_HOME:/home/crystal/Android/Sdk
 SETUVAR --export DOTFILES:/home/crystal/\x2edotfiles
-SETUVAR --export GPG_TTY:/dev/pts/2
 SETUVAR --export NIXOS_DIR:/home/crystal/\x2edotfiles/nixos
 SETUVAR --export STARSHIP_LOG:error
 SETUVAR __fish_initialized:4300
